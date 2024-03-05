@@ -10,6 +10,7 @@ ENV tag_name=2.0.5
 # ADD ./resource/apache-doris-${tag_name}-bin-x64.tar.gz /opt/
 RUN wget -O /opt/apache-doris-${tag_name}-bin-x64.tar.gz https://apache-doris-releases.oss-accelerate.aliyuncs.com/apache-doris-${tag_name}-bin-x64.tar.gz
 
+RUN ls -alh /opt
 RUN apt-get update && \
     apt-get install -y default-mysql-client && \
     apt-get clean && \
