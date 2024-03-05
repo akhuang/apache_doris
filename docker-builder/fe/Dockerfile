@@ -8,7 +8,9 @@ ENV JAVA_HOME="/usr/local/openjdk-8/" \
 ENV tag_name=2.0.5
 # 下载软件至镜像内，可根据需要替换
 # ADD ./resource/apache-doris-${tag_name}-bin-x64.tar.gz /opt/
-RUN wget -O /opt/apache-doris-${tag_name}-bin-x64.tar.gz https://apache-doris-releases.oss-accelerate.aliyuncs.com/apache-doris-${tag_name}-bin-x64.tar.gz
+RUN mkdir /opt && \
+    apt-get install -y wget && \
+    wget -O /opt/apache-doris-${tag_name}-bin-x64.tar.gz https://apache-doris-releases.oss-accelerate.aliyuncs.com/apache-doris-${tag_name}-bin-x64.tar.gz
 
 RUN ls -alh /opt
 RUN apt-get update && \
