@@ -12,7 +12,6 @@ RUN apt-get install -y wget && \
     wget -O /opt/apache-doris-${tag_name}-bin-x64.tar.gz https://apache-doris-releases.oss-accelerate.aliyuncs.com/apache-doris-${tag_name}-bin-x64.tar.gz && \
     tar -xzvf /opt/apache-doris-${tag_name}-bin-x64.tar.gz -C /opt
 
-RUN ls -alh /opt
 RUN apt-get update && \
     apt-get install -y default-mysql-client && \
     apt-get clean && \
